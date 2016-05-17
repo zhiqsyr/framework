@@ -8,7 +8,7 @@
   <artifactId>dao-mybatis</artifactId>
   
   <properties>
-  	<mybatis.version>3.2.8</mybatis.version>
+  	<mybatis.version>3.3.0</mybatis.version>
   	<mybatis.spring.version>1.2.3</mybatis.spring.version>
   	<beanutils.version>1.9.2</beanutils.version>
   </properties>
@@ -16,7 +16,7 @@
   <dependencies>
   	<dependency>
   		<groupId>org.zhiqsyr.framework</groupId>
-  		<artifactId>dao-common</artifactId>
+  		<artifactId>dao-springjdbc</artifactId>
   		<version>${project.version}</version>
   	</dependency>  	
   

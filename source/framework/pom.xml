@@ -11,6 +11,12 @@
   	<module>dao-mybatis</module>
   	<module>dao-springdata</module>
   	<module>dao-springjdbc</module>
-  	<module>model-page</module>
+  	<module>model</module>
+  	<module>utils</module>
   </modules>
+  
+  <properties>
+  	<spring.version>4.1.5.RELEASE</spring.version>
+  </properties>  
+  
 </project>

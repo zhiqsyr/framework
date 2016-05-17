@@ -7,37 +7,50 @@
 		http://www.springframework.org/schema/context 
 		http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="org.zhiqsyr.framework.demo.dao.mybatis" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>		
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+ 		<property name="typeAliasesPackage" value="org.zhiqsyr.framework.demo.entity" />
+ 		<property name="mapperLocations" value="classpath:mybatis/*Dao.xml" />
+		<property name="plugins">		<!-- 加载插件，逆向执行 -->
+			<array>
+				<ref bean="orderablePaginationPlugin" />
+				<ref bean="autoGenSingleCrudPlugin" />
+			</array>
+		</property> 		
+	</bean> 
+	
 	<!-- MyBatis 分页插件 -->
-	<bean id="orderablePaginationPlugin" class="org.cloud.dao.framework.mybatis.plugin.OrderablePaginationPlugin">
+	<bean id="orderablePaginationPlugin" class="org.zhiqsyr.framework.dao.mybatis.plugins.OrderablePaginationPlugin">
 		<property name="properties">
 			<props>
 				<prop key="dialect">${dialect}</prop>
 			</props>
 		</property>
 	</bean>	
+	<!-- MyBatis 自动生成单表 CRUD SQL 插件 -->
+	<bean id="autoGenSingleCrudPlugin" class="org.zhiqsyr.framework.dao.mybatis.plugins.AutoGenSingleCrudPlugin"></bean>	
 	
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="org.cloud.demo.dao.mybatis" />
-		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
-	</bean>		
-	
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource" />
- 		<property name="typeAliasesPackage" value="org.cloud.demo.entity" />
- 		<property name="mapperLocations" value="classpath:mybatis/*Dao.xml" />
-		<property name="plugins">		<!-- 加载分页插件 -->
-			<array>
-				<ref bean="orderablePaginationPlugin" />
-			</array>
-		</property> 		
-	</bean> 
-	
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-		<property name="driverClassName" value="${jdbc.driverClassName}" />
-		<property name="url" value="${jdbc.url}" />
-		<property name="username" value="${jdbc.username}" />
-		<property name="password" value="${jdbc.password}" />
-	</bean>
+    <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+        <constructor-arg>
+            <bean class="com.zaxxer.hikari.HikariConfig">
+                <property name="driverClassName" value="${jdbc.driverClassName}" />
+                <property name="jdbcUrl" value="${jdbc.url}" />
+                <property name="username" value="${jdbc.username}" />
+                <property name="password" value="${jdbc.password}" />
+                <property name="maximumPoolSize" value="${dataSource.maxActive:1000}"/> 
+                <property name="minimumIdle" value="${dataSource.initialSize:5}"/> 
+                <property name="maxLifetime" value="${dataSource.idleMaxAgeInSeconds:1800000}"/> 
+                <property name="idleTimeout" value="${dataSource.maxConnectionAgeInSeconds:600000}"/> 
+                <property name="connectionTestQuery" value="${dataSource.connectionTestQuery:select 1}"/> 
+				<property name="connectionTimeout" value="${dataSource.maxConnectionAgeInSeconds:14000}"/>
+			</bean>
+		</constructor-arg> 
+    </bean>	
 	
 	<context:property-placeholder location="classpath:jdbc/jdbc.properties" />	
 	

@@ -1,11 +1,11 @@
 package org.zhiqsyr.framework.demo.dao.hibernate;
 
-import org.cloud.dao.framework.hibernate.DefaultHibernateExecution;
-import org.cloud.demo.entity.Dept;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.zhiqsyr.framework.dao.hibernate.DefaultHibernateExecution;
+import org.zhiqsyr.framework.demo.entity.Dept;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:/spring/applicationContext_common.xml", "classpath:/spring/applicationContext_db_hibernate.xml"})

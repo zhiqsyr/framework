@@ -3,14 +3,18 @@ package org.zhiqsyr.framework.demo.dao.mybatis;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
-import org.cloud.dao.framework.mybatis.MyBatisExecution;
-import org.cloud.demo.entity.Dept;
-import org.cloud.model.page.OrderablePagination;
+import org.zhiqsyr.framework.dao.mybatis.MyBatisExecution;
+import org.zhiqsyr.framework.demo.entity.Dept;
+import org.zhiqsyr.framework.model.page.OrderablePagination;
 
 public interface DeptDao extends MyBatisExecution {
 
-	void save(Dept po);
+	void insert(Dept po);
+	void update(Dept po);
+	void delete(Dept po);
 	
-	List<Dept> find(@Param("query") Dept query, OrderablePagination op);
+	List<Dept> select(Dept query);
+	
+	List<Dept> select(@Param("query") Dept query, OrderablePagination op);
 	
 }
