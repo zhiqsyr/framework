@@ -13,6 +13,10 @@
   	<module>dao-springjdbc</module>
   	<module>model</module>
   	<module>utils</module>
+  	<module>service</module>
+  	<module>web-common</module>
+  	<module>web-zk</module>
+  	<module>utils-excel</module>
   </modules>
   
   <properties>

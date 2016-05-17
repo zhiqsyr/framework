@@ -1,0 +1,8 @@
+<configs>
+	
+	<conf type="system">
+		<key type="email_sender_name">EFB 测试系统</key>
+	</conf>
+	
+</configs>
+    

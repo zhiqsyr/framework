@@ -1,0 +1,22 @@
+<dependency>
+	<groupId>net.sf.jxls</groupId>
+	<artifactId>jxls-core</artifactId>
+	<version>1.0</version>
+</dependency>
+<dependency>
+	<groupId>org.apache</groupId>
+	<artifactId>poi</artifactId>
+	<version>3.8</version>
+</dependency>	
+<dependency>
+	<groupId>org.apache</groupId>
+	<artifactId>poi-ooxml</artifactId>
+	<version>3.8</version>
+</dependency>
+
+// 可能依赖的jar，有待验证	
+<dependency>
+	<groupId>org.apache.commons</groupId>
+	<artifactId>jexl2</artifactId>
+	<version>2.0.1</version>
+</dependency>	
