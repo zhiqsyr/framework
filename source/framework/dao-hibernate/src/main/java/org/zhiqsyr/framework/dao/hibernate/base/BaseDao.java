@@ -17,10 +17,6 @@ public class BaseDao {
 //	@Resource
 	protected DefaultHibernateExecution dbExec;
 
-	public BaseDao() {
-		System.out.println("--BaseDao--");
-	}
-	
 	public Serializable doSave(BaseEntity baseEntity) {
 		return getDbExec().save(baseEntity);
 	}

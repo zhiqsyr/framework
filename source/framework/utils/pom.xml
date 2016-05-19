@@ -42,8 +42,8 @@
   	<dependency>
   		<groupId>org.apache.commons</groupId>
   		<artifactId>commons-email</artifactId>
-  		<version>1.3.3</version>
-  		<scope>${commons-email.version}</scope>	
+  		<version>${commons-email.version}</version>
+  		<scope>provided</scope>
   	</dependency>
   	<!-- FTP 等需要 -->
   	<dependency>

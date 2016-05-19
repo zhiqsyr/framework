@@ -14,10 +14,12 @@
   		<version>${project.version}</version>
   	</dependency>   
   
+    <!-- spring-orm 依赖 spring-jdbc
   	<dependency>
   		<groupId>org.springframework</groupId>
   		<artifactId>spring-jdbc</artifactId>
   		<version>${spring.version}</version>
-  	</dependency>  	  
+  	</dependency>  	
+  	 -->  
   </dependencies>  	  
 </project>

@@ -18,5 +18,12 @@
   		<artifactId>model</artifactId>
   		<version>${project.version}</version>
   	</dependency>  
+  	
+  	<!-- 所有 dao 层框架，整合 spring 时，必要 spring-orm -->
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-orm</artifactId>
+  		<version>${spring.version}</version>
+  	</dependency>   	
   </dependencies>  	  
 </project>
