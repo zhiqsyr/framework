@@ -22,6 +22,18 @@
 		<groupId>org.hibernate</groupId>
   		<artifactId>hibernate-core</artifactId>
   		<version>${hibernate.version}</version>
-  	</dependency>   		  
+  	</dependency> 
+  	<!-- Hibernate 二级缓存，另外需要hibernate-ehcache.jar、ehcache-core.jar -->  	
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-ehcache</artifactId>
+	    <version>${hibernate.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>net.sf.ehcache</groupId>
+	    <artifactId>ehcache-core</artifactId>
+	    <version>2.6.11</version>
+	</dependency>
+  		  
   </dependencies>  	
 </project>

@@ -7,6 +7,10 @@
 		http://www.springframework.org/schema/context 
 		http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 	
+	<bean id="baseDao" class="org.zhiqsyr.framework.dao.hibernate.base.BaseDao">
+		<property name="dbExec" ref="dbExec"></property>
+	</bean>
+	
 	<bean id="dbExec" class="org.zhiqsyr.framework.dao.hibernate.DefaultHibernateExecution">
 		<constructor-arg ref="dataSource"></constructor-arg>
 		<constructor-arg ref="sessionFactory"></constructor-arg>
@@ -20,6 +24,21 @@
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>  
                 <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>  
                 <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+                
+				<!-- 配置二级缓存 -->  
+        		<prop key="hibernate.cache.use_second_level_cache">true</prop>                   
+                <!-- Hibernate3的配置方式：设置二级缓存插件EHCache的Provider类
+                <prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+                 -->
+        		<prop key="hibernate.cache.region.factory_class">
+        			org.hibernate.cache.ehcache.EhCacheRegionFactory
+        		</prop>                
+                <!-- 启动"查询缓存" -->
+                <prop key="hibernate.cache.use_query_cache">true</prop>
+                <!-- 指定缓存配置文件位置 -->  
+      			<prop key="net.sf.ehcache.configurationResourceName">
+         			ehcache/ehcache.xml  
+      			</prop>                
             </props>
 		</property>            
 	</bean>    

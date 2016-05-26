@@ -26,6 +26,9 @@
 	<HikariCP.version>2.4.3</HikariCP.version>
 	<mysql.version>5.1.38</mysql.version>  	
   	
+  	<log4j.version>1.2.17</log4j.version>
+  	<slf4j-log4j12.version>1.7.20</slf4j-log4j12.version>
+  	
   	<junit.version>4.12</junit.version>
   </properties>  
   
@@ -54,6 +57,17 @@
 	    <version>${mysql.version}</version>
 	    <scope>test</scope>
 	</dependency>    
+	
+  	<dependency>
+  		<groupId>log4j</groupId>
+  		<artifactId>log4j</artifactId>
+  		<version>${log4j.version}</version>
+  	</dependency>  	
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-log4j12</artifactId>
+	    <version>${slf4j-log4j12.version}</version>
+	</dependency>	
 	
   	<dependency>
   		<groupId>org.springframework</groupId>

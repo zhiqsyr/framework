@@ -6,4 +6,8 @@ public interface DeptService {
 
 	Dept getById(Integer id);
 	
+	void doCreate();
+	
+	void doModify();
+	
 }

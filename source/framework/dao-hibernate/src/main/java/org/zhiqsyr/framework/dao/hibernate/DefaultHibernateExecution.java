@@ -48,7 +48,7 @@ public class DefaultHibernateExecution extends SpringJdbcExecution implements Hi
 			@SuppressWarnings({ "unchecked" })
 			@Override
 			public T doInHibernate(Session session) throws HibernateException {
-				return (T) session.createCriteria(entityClass)
+				return (T) session.createCriteria(entityClass).setCacheable(true)	// 默认criteria.cacheable=false，二级缓存需要启用
 						.add(Restrictions.eq(propertyName, value))
 						.uniqueResult();
 			}

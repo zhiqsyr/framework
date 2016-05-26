@@ -13,9 +13,7 @@ import org.zhiqsyr.framework.model.entity.BaseEntity;
  */
 public class BaseDao {
 
-	// 注释以兼容非Hibernate框架，使用Hibernate时，显式注入
-//	@Resource
-	protected DefaultHibernateExecution dbExec;
+	protected DefaultHibernateExecution dbExec;	// 显示配置注入 bean
 
 	public Serializable doSave(BaseEntity baseEntity) {
 		return getDbExec().save(baseEntity);
