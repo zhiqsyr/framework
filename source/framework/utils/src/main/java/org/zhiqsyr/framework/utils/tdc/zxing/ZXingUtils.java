@@ -10,7 +10,7 @@ import java.util.UUID;
 
 import javax.imageio.ImageIO;
 
-import org.zhiqsyr.framework.utils.common.CommonConstants;
+import org.zhiqsyr.framework.utils.cache.Constants;
 import org.zhiqsyr.framework.utils.i18n.properties.PropertiesUtils;
 
 import com.google.zxing.BarcodeFormat;
@@ -63,7 +63,7 @@ public class ZXingUtils {
 			BitMatrix bitMatrix = new MultiFormatWriter().encode(contents,
 					BarcodeFormat.QR_CODE, width, height, getEncodeHintType());
 			
-			File pic = new File(folder + File.separator + UUID.randomUUID().toString() + CommonConstants.POINT + FORMAT);
+			File pic = new File(folder + File.separator + UUID.randomUUID().toString() + Constants.POINT + FORMAT);
             MatrixToImageWriter.writeToFile(bitMatrix, FORMAT, pic);  
             
             return pic;
@@ -118,7 +118,7 @@ public class ZXingUtils {
 
 			g.dispose();
 
-			File qrPic = new File(folder + File.separator + UUID.randomUUID().toString() + CommonConstants.POINT + FORMAT);
+			File qrPic = new File(folder + File.separator + UUID.randomUUID().toString() + Constants.POINT + FORMAT);
 			ImageIO.write(image, FORMAT, qrPic);
 			
 			return qrPic;

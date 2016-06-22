@@ -2,7 +2,7 @@ package org.zhiqsyr.framework.utils.net.email;
 
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
-import org.zhiqsyr.framework.utils.common.CommonConstants;
+import org.zhiqsyr.framework.utils.cache.Constants;
 import org.zhiqsyr.framework.utils.i18n.properties.PropertiesUtils;
 
 
@@ -22,7 +22,7 @@ public class EmailUtils {
 	 */
 	public static void sendTextMail(String toAddr, String subject, String msg) {
 		SimpleEmail email = new SimpleEmail();
-		email.setCharset(CommonConstants.DEFAULT_WEB_ENCODING);
+		email.setCharset(Constants.DEFAULT_WEB_ENCODING);
 		email.setHostName(PropertiesUtils.getValueInSystem("email.smtp.host"));
 		try {
 			email.addTo(toAddr);

@@ -24,12 +24,14 @@
             <tx:method name="get*"	 read-only="true"/>
             <tx:method name="is*"	 read-only="true"/>
             
-            <tx:method name="do*"/>
+            <tx:method name="do*"	 propagation="REQUIRED"/>
         </tx:attributes>   
     </tx:advice>
+    	 
 	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>	
+
 	
 </beans> 

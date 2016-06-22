@@ -1,5 +1,6 @@
 package org.zhiqsyr.framework.dao.hibernate.test.benchmark;
 
+import org.apache.commons.lang.RandomStringUtils;
 import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,16 +18,28 @@ public class DeptBenchmark {
 	@Autowired
 	private DeptService deptService;
 	
-	@Test
+//	@Test
 	public void getById() {
 		Dept vo = deptService.getById(1);
 		
 		System.err.println(StringUtils.center(vo.getName(), 50, '-'));
 	}
 	
-//	@Test
-	public void doCreate() {
-		deptService.doCreate();
+	@Test
+	public void doCreate() throws Exception {
+		System.err.println(StringUtils.center(String.valueOf(deptService.queryAll().size()), 50, '-'));
+		
+		Dept po = new Dept();
+		po.setName(RandomStringUtils.randomAlphanumeric(10));
+		
+		deptService.doCreate(po);
+		
+//		Dept vo = deptService.getById(po.getId());
+//		System.err.println(StringUtils.center(vo.getName(), 50, '-'));
+		
+		System.err.println(StringUtils.center(String.valueOf(deptService.queryAll().size()), 50, '-'));
+	
+//		throw new Exception("on purpose");		// 抛出受检查异常（非运行时异常），默认不会回滚
 	}
 	
 //	@Test
@@ -34,7 +47,7 @@ public class DeptBenchmark {
 		Dept vo = deptService.getById(2);
 		System.err.println(StringUtils.center(vo.getName(), 50, '-'));
 		
-		deptService.doModify();
+		deptService.doModify(vo);
 		
 		throw new RuntimeException("on purpose");
 	}

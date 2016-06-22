@@ -1,4 +1,4 @@
-package org.zhiqsyr.framework.utils.common;
+package org.zhiqsyr.framework.utils.cache;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,7 +11,7 @@ import org.zhiqsyr.framework.utils.i18n.properties.PropertiesUtils;
  * 
  * @author dongbz 2015-5-6
  */
-public class CommonConstants {
+public class Constants {
 
 	public static final String PROJECT_NAME = PropertiesUtils.getValueInSystem("project.name");
 	public static final String DEFAULT_WEB_ENCODING = PropertiesUtils.getValueInSystem("default.web.encoding");
