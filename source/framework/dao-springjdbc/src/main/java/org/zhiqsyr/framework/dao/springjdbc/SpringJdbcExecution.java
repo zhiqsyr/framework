@@ -18,7 +18,7 @@ import org.springframework.util.ObjectUtils;
 import org.zhiqsyr.framework.dao.common.dialect.SqlDialect;
 import org.zhiqsyr.framework.dao.common.dialect.SqlServerDialect;
 import org.zhiqsyr.framework.dao.common.exception.DaoException;
-import org.zhiqsyr.framework.dao.common.utils.SqlUtils;
+import org.zhiqsyr.framework.dao.common.utils.JDBCUtils;
 import org.zhiqsyr.framework.dao.springjdbc.mapper.ObjectArrayRowMapper;
 import org.zhiqsyr.framework.model.page.OrderablePagination;
 
@@ -116,7 +116,7 @@ public class SpringJdbcExecution implements SqlExecution {
 				return jdbcTemplate.query(sql, params, rowMapper);
 			} else {
 				// 获得总数
-				Number recordCount = retrieveUniqueObjectBySql(Number.class, SqlUtils.getCountSql(sql), params);
+				Number recordCount = retrieveUniqueObjectBySql(Number.class, JDBCUtils.getCountSql(sql), params);
 				if (recordCount != null) {
 					pagination.setTotalSize(recordCount.intValue());
 				}

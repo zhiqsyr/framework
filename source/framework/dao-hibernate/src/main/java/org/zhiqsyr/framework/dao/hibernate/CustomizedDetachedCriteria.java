@@ -29,7 +29,6 @@ public class CustomizedDetachedCriteria extends DetachedCriteria {
 		if (criterion != null) {
 			super.add(criterion);
 		}
-		
 		return this;
 	}
 	

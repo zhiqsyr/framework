@@ -31,17 +31,16 @@ public class CustomizedRestrictions {
     }
 
     /**
-     * <b>Function: <b> propertyName like value，一般 value 传入 "%" + value + "%"
-     *
-     * @param propertyName
-     * @param value
-     * @return
+     * @param value	不用拼接 "%"，方法体内自动拼接
      */
     public static SimpleExpression like(String propertyName, Object value)
     {
     	return value == null ? null : Restrictions.like(propertyName, "%" + value + "%");
     }
 
+    /**
+     * @param value	不用拼接 "%"，方法体内自动拼接
+     */
     public static SimpleExpression like(String propertyName, String value, MatchMode matchMode)
     {
         return value == null ? null : Restrictions.like(propertyName, "%" + value + "%", matchMode);

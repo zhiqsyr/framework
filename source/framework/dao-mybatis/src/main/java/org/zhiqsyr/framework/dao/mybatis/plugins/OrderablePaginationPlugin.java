@@ -24,7 +24,7 @@ import org.zhiqsyr.framework.dao.common.dialect.MySqlDialect;
 import org.zhiqsyr.framework.dao.common.dialect.OracleDialect;
 import org.zhiqsyr.framework.dao.common.dialect.SqlDialect;
 import org.zhiqsyr.framework.dao.common.dialect.SqlServerDialect;
-import org.zhiqsyr.framework.dao.common.utils.SqlUtils;
+import org.zhiqsyr.framework.dao.common.utils.JDBCUtils;
 import org.zhiqsyr.framework.model.page.OrderablePagination;
 import org.zhiqsyr.framework.utils.reflect.ReflectUtils;
 
@@ -113,7 +113,7 @@ public class OrderablePaginationPlugin implements Interceptor {
     	PreparedStatement countStmt = null;
 		ResultSet rs = null;
 		try {
-			String countSql = SqlUtils.getCountSql(sql);					// 总记录数
+			String countSql = JDBCUtils.getCountSql(sql);					// 总记录数
 			countStmt = conn.prepareStatement(countSql);
 			
 			ReflectUtils.setValueByFieldName(boundSql, "sql", countSql);	// 写入SQL

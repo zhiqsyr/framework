@@ -1,4 +1,4 @@
-package org.zhiqsyr.framework.utils.excel.imp.jxl.util;
+package org.zhiqsyr.framework.dao.common.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,7 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class SqlUtils {
+public class JDBCUtils {
 
 	/**
 	 * 建立SQL Server数据库连接

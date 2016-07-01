@@ -8,7 +8,7 @@ import java.util.Map;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.zhiqsyr.framework.utils.common.CommonConstants;
+import org.zhiqsyr.framework.utils.cache.Constants;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zul.Messagebox;
@@ -75,7 +75,7 @@ public class BaseVM {
 
 	public void showInformationBox(String message) {
 		try {
-		    Messagebox.show(message, CommonConstants.PROJECT_NAME, Messagebox.OK, Messagebox.INFORMATION);
+		    Messagebox.show(message, Constants.PROJECT_NAME, Messagebox.OK, Messagebox.INFORMATION);
 		} catch (Exception e) {
 		    throw new RuntimeException(e);
 		}
@@ -83,7 +83,7 @@ public class BaseVM {
 
     public void showErrorBox(String message) {
 		try {
-		    Messagebox.show(message, CommonConstants.PROJECT_NAME, Messagebox.OK, Messagebox.ERROR);
+		    Messagebox.show(message, Constants.PROJECT_NAME, Messagebox.OK, Messagebox.ERROR);
 		} catch (Exception e) {
 		    throw new RuntimeException(e);
 		}
@@ -91,7 +91,7 @@ public class BaseVM {
 
     public void showWarningBox(String message) {
 		try {
-		    Messagebox.show(message, CommonConstants.PROJECT_NAME, Messagebox.OK, Messagebox.EXCLAMATION);
+		    Messagebox.show(message, Constants.PROJECT_NAME, Messagebox.OK, Messagebox.EXCLAMATION);
 		} catch (Exception e) {
 		    throw new RuntimeException(e);
 		}
@@ -99,7 +99,7 @@ public class BaseVM {
     
     public boolean showQuestionBox(String message) {
 		try {
-		    return Messagebox.show(message, CommonConstants.PROJECT_NAME, Messagebox.YES | Messagebox.NO, Messagebox.QUESTION) == Messagebox.YES;
+		    return Messagebox.show(message, Constants.PROJECT_NAME, Messagebox.YES | Messagebox.NO, Messagebox.QUESTION) == Messagebox.YES;
 		} catch (Exception e) {
 		    throw new RuntimeException(e);
 		}
