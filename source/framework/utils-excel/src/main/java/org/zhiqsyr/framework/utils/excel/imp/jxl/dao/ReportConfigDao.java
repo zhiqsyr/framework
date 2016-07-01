@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.stereotype.Repository;
 import org.zhiqsyr.framework.utils.excel.imp.jxl.entity.ReportConfig;
-import org.zhiqsyr.framework.utils.string.sql.SqlUtils;
+import org.zhiqsyr.framework.utils.excel.imp.jxl.util.SqlBuildUtils;
 
 
 @Repository
@@ -16,7 +16,7 @@ public class ReportConfigDao extends JxlBaseDao {
 	public ReportConfig findByReportType(String reportType) {
 		StringBuilder sql = new StringBuilder();
 		sql.append(" SELECT ");
-		sql.append(SqlUtils.addAlias2Fields("id, report_name, table_name, sheet_name, " +
+		sql.append(SqlBuildUtils.addAlias2Fields("id, report_name, table_name, sheet_name, " +
 				"start_row, end_row, start_col, end_col, serial_num_col, report_type, template_version, template_path"));
 		sql.append(" FROM excel_report_config ");
 		sql.append(" WHERE report_type = :reportType ");

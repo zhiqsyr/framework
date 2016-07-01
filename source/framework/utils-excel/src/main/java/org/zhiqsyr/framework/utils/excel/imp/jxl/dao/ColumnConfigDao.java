@@ -7,7 +7,7 @@ import java.util.Map;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.stereotype.Repository;
 import org.zhiqsyr.framework.utils.excel.imp.jxl.entity.ColumnConfig;
-import org.zhiqsyr.framework.utils.string.sql.SqlUtils;
+import org.zhiqsyr.framework.utils.excel.imp.jxl.util.SqlBuildUtils;
 
 
 @Repository
@@ -17,7 +17,7 @@ public class ColumnConfigDao extends JxlBaseDao {
 	public List<ColumnConfig> findByReportId(String reportId) {
 		StringBuilder sql = new StringBuilder();
 		sql.append(" SELECT ");
-		sql.append(SqlUtils.addAlias2Fields("id, report_id, alias_name, column_name, " +
+		sql.append(SqlBuildUtils.addAlias2Fields("id, report_id, alias_name, column_name, " +
 				"data_position, data_type, processor_and_validator, script_validator, " +
 				"column_converter, need_save, need_show, value_mapper, serial, ordinal"));
 		sql.append(" FROM excel_column_config ");
@@ -42,7 +42,7 @@ public class ColumnConfigDao extends JxlBaseDao {
 	public ColumnConfig findByReportTypeAndColumnName(String reportType, String columnName) {
 		StringBuilder sql = new StringBuilder();
 		sql.append(" SELECT ");
-		sql.append(SqlUtils.addAlias2Fields("c.id, report_id, alias_name, column_name, " +
+		sql.append(SqlBuildUtils.addAlias2Fields("c.id, report_id, alias_name, column_name, " +
 				"data_position, data_type, processor_and_validator, script_validator, " +
 				"column_converter, need_save, need_show, value_mapper, serial, ordinal"));
 		sql.append(" FROM excel_column_config c ");

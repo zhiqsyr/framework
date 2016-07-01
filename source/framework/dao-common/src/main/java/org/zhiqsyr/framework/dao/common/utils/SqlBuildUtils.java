@@ -1,6 +1,6 @@
-package org.zhiqsyr.framework.utils.string.sql;
+package org.zhiqsyr.framework.dao.common.utils;
 
-public class SqlUtils {
+public class SqlBuildUtils {
 
 	/**
 	 * 为拼接的查询sql中的各个字段添加别名，命名规范同于java属性命名规范（较高耦合）
