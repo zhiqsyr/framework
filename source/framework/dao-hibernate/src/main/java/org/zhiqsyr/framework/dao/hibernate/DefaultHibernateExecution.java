@@ -40,7 +40,7 @@ public class DefaultHibernateExecution extends SpringJdbcExecution implements Hi
 	}
 
 	@Override
-	public <T> T findByProperty(final Class<T> entityClass, final String propertyName,
+	public <T> T getByProperty(final Class<T> entityClass, final String propertyName,
 			final Object value) {
 
 		return hibernateTemplate.execute(new HibernateCallback<T>() {

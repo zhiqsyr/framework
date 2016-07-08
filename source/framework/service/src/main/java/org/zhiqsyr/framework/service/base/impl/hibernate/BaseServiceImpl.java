@@ -29,7 +29,7 @@ public class BaseServiceImpl implements BaseService {
 	@Override
 	public <T> T queryByProperty(Class<T> entityClass, String propertyName,
 			Object value) {
-		return baseDao.getDbExec().findByProperty(entityClass, propertyName, value);
+		return baseDao.getDbExec().getByProperty(entityClass, propertyName, value);
 	}
 
 	@Override

@@ -18,7 +18,7 @@ import org.zhiqsyr.framework.model.page.OrderablePagination;
 public interface HibernateExecution extends SqlExecution {
 
 	<T> T get(Class<T> entityClass, Serializable id);
-	<T> T findByProperty(final Class<T> entityClass, final String propertyName, final Object value);
+	<T> T getByProperty(final Class<T> entityClass, final String propertyName, final Object value);
 	
 	<T> List<T> findAll(Class<T> entityClass);
 	<T> List<T> findAll(Class<T> entityClass, Validity validity);
