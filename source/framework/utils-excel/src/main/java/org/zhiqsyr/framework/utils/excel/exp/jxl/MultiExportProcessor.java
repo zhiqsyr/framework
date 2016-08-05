@@ -11,7 +11,7 @@ import jxl.write.WritableCell;
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.zhiqsyr.framework.utils.excel.exp.jxl.model.DataContext;
 import org.zhiqsyr.framework.utils.excel.exp.jxl.model.ExtraCellDataModel;
 import org.zhiqsyr.framework.utils.excel.exp.jxl.model.ListDataContext;

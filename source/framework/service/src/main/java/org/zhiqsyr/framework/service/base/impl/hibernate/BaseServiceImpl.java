@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.zhiqsyr.framework.dao.hibernate.DefaultHibernateExecution;
-import org.zhiqsyr.framework.dao.hibernate.base.BaseDao;
+import org.zhiqsyr.framework.dao.hibernate.base.spring.BaseDao;
 import org.zhiqsyr.framework.model.entity.BaseEntity;
 import org.zhiqsyr.framework.model.enums.Validity;
 import org.zhiqsyr.framework.model.page.Order;

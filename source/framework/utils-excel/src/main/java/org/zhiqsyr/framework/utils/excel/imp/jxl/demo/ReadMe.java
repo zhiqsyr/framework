@@ -2,7 +2,7 @@ package org.zhiqsyr.framework.utils.excel.imp.jxl.demo;
 
 import java.io.FileInputStream;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.zhiqsyr.framework.utils.excel.imp.jxl.common.model.ParameterSet;
 import org.zhiqsyr.framework.utils.excel.imp.jxl.entity.ReportConfig;
 import org.zhiqsyr.framework.utils.excel.imp.jxl.model.CellDataModel;

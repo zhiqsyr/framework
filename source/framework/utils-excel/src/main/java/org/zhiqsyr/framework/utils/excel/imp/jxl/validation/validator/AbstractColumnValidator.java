@@ -2,7 +2,7 @@ package org.zhiqsyr.framework.utils.excel.imp.jxl.validation.validator;
 
 import java.text.MessageFormat;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.zhiqsyr.framework.utils.excel.imp.jxl.common.model.ParameterSet;

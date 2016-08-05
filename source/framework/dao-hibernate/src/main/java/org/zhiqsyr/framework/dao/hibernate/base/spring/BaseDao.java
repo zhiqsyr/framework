@@ -1,4 +1,4 @@
-package org.zhiqsyr.framework.dao.hibernate.base;
+package org.zhiqsyr.framework.dao.hibernate.base.spring;
 
 import java.io.Serializable;
 

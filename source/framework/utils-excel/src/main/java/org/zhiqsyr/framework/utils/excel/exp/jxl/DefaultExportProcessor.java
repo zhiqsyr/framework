@@ -11,7 +11,7 @@ import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.zhiqsyr.framework.utils.excel.exp.jxl.model.DataContext;
 import org.zhiqsyr.framework.utils.excel.exp.jxl.model.ListDataContext;
 import org.zhiqsyr.framework.utils.excel.exp.jxl.model.SheetTemplate;

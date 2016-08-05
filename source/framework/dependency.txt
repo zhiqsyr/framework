@@ -1,0 +1,16 @@
+				-> utils
+utils 			-> utils-excel
+				-> design-pattern
+
+utils 			-> model
+
+model 			-> dao-common
+dao-common		-> dao-springjdbc
+				-> dao-springdata
+dao-springjdbc 	-> dao-hibernate
+dao-springjdbc 	-> dao-mybatis
+
+dao-hibernate	-> service
+
+				-> web-common
+model			-> web-zk

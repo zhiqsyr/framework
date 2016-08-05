@@ -30,7 +30,6 @@ public interface HibernateExecution extends SqlExecution {
 	<T> List<T> findAllValidByProperty(final Class<T> entityClass, final String propertyName, final Object value);
 	<T> List<T> findAllValidByProperty(final Class<T> entityClass, final String propertyName, final Object value, final Order order);
 	
-	
 	<T> List<T> findByExample(T exampleEntity);
 	
 	<T> List<T> findByCriteria(DetachedCriteria criteria);

@@ -1,6 +1,6 @@
 package org.zhiqsyr.framework.utils.converter;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * 进制（编码）转换器

@@ -2,10 +2,10 @@ package org.zhiqsyr.framework.dao.hibernate.test.service.impl;
 
 import java.util.List;
 
-import org.apache.commons.lang.RandomStringUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.zhiqsyr.framework.dao.hibernate.base.BaseDao;
+import org.zhiqsyr.framework.dao.hibernate.base.spring.BaseDao;
 import org.zhiqsyr.framework.dao.hibernate.test.entity.Dept;
 import org.zhiqsyr.framework.dao.hibernate.test.service.DeptService;
 

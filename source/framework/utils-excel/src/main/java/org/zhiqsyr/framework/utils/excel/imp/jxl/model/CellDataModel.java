@@ -2,7 +2,7 @@ package org.zhiqsyr.framework.utils.excel.imp.jxl.model;
 
 import java.io.Serializable;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.zhiqsyr.framework.utils.excel.imp.jxl.entity.ColumnConfig;
 import org.zhiqsyr.framework.utils.excel.imp.jxl.parse.model.CellModel;
 import org.zhiqsyr.framework.utils.excel.imp.jxl.validation.ValidateResult;
