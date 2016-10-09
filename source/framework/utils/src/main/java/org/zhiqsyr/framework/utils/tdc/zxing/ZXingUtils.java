@@ -40,10 +40,10 @@ public class ZXingUtils {
 	private static final String CHARACTER_SET = PropertiesUtils.getValueInSystem("zxing.character.set");
 	
 	public static void main(String[] args) {
-		File file = generate("d:/qr", "Q: What's your name ?\nA: Xiao Ming", 200, 200);
+		File file = generate("c://tmp", "Q: What's your name ?\nA: Xiao Ming", 200, 200);
 		System.out.println(parse(file));
 		
-		file = generateWithLogo("d:/qr", "d:/qr/logo.png", "What are you nongshalai", 200, 200);
+		file = generateWithLogo("c://tmp", "c://tmp//test.jpg", "What are you nongshalai", 200, 200);
 		System.out.println(parse(file));
 	}
 	

@@ -1,10 +1,3 @@
-/*
- * Copyright 2008-2014 the original author or authors.
- * 
- *      http://www.iclassmate.net
- *
- * Project WeiKe
- */
 package org.zhiqsyr.framework.web.common.utils;
 
 import org.springframework.context.ApplicationContext;
