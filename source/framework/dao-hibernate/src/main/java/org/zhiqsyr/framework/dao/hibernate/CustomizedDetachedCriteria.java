@@ -24,6 +24,10 @@ public class CustomizedDetachedCriteria extends DetachedCriteria {
     	return new CustomizedDetachedCriteria(entityName, alias);
     }	
     
+    public static CustomizedDetachedCriteria forClass(@SuppressWarnings("rawtypes") Class clazz) {
+    	return new CustomizedDetachedCriteria(clazz.getName());
+    }    
+    
 	@Override
 	public CustomizedDetachedCriteria add(Criterion criterion) {
 		if (criterion != null) {

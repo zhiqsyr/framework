@@ -40,11 +40,11 @@ public class ZXingUtils {
 	private static final String CHARACTER_SET = PropertiesUtils.getValueInSystem("zxing.character.set");
 	
 	public static void main(String[] args) {
-		File file = generate("c://tmp", "Q: What's your name ?\nA: Xiao Ming", 200, 200);
+		File file = generate("c://tmp", "Q: What's your name ?\nA: Xiao Ming", 300, 300);
 		System.out.println(parse(file));
 		
-		file = generateWithLogo("c://tmp", "c://tmp//test.jpg", "What are you nongshalai", 200, 200);
-		System.out.println(parse(file));
+//		file = generateWithLogo("c://tmp", "c://tmp//test.jpg", "What are you nongshalai", 200, 200);
+//		System.out.println(parse(file));
 	}
 	
 	/**
@@ -167,11 +167,11 @@ public class ZXingUtils {
 		// 用于设置QR二维码参数
 		Map<EncodeHintType, Object> hints = new HashMap<EncodeHintType, Object>();
 		// 设置QR二维码的纠错级别（H为最高级别）具体级别信息
-		hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
+		hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.M);
 		// 设置编码方式
 		hints.put(EncodeHintType.CHARACTER_SET, CHARACTER_SET);
 		// 设置边框留白宽度（0-4）
-		hints.put(EncodeHintType.MARGIN, 1);
+		hints.put(EncodeHintType.MARGIN, 0);
 
 		return hints;
 	}	
